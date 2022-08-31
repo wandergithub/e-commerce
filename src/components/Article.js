@@ -8,11 +8,11 @@ const Article = () => {
   return (
     <div className="main-container">
       <div className="a1-container">
-        <img src="https://i.pinimg.com/550x/36/eb/6b/36eb6bd7b0adaefd1357a464d78d2142.jpg" alt="Game cover" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2aOQBjZ1u6ypjPz-KYYSXj9xtqaIT93qm9Q&usqp=CAU" alt="Game cover" />
         <Container>
           <Typography variant="h2" className="mb-3" gutterBottom>{game.name}</Typography>
           <Typography variant="body1" className="p-description" gutterBottom>{game.description}</Typography>
-          <Button variant="contained" className="mt-3">Buy now</Button>
+          <Button variant="outlined" className="mt-3">Buy now</Button>
         </Container>
       </div>
       <div className="a2-container">
