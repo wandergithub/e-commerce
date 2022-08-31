@@ -1,7 +1,7 @@
-import { configureStore } from "@reduxjs/toolkit";
-import reducer from "./ecommerce/ecommerce";
+import { configureStore } from '@reduxjs/toolkit';
+import reducer from './ecommerce/ecommerce';
 
-const middlewares = []
+const middlewares = [];
 
 const store = configureStore({
   reducer,

@@ -1,13 +1,13 @@
-import ecommerceAppState from "./state";
-//Actions
+import ecommerceAppState from './state';
+// Actions
 
 // Reducer
 
 const reducer = (state = ecommerceAppState, action = {}) => {
-  switch(action.type) {
+  switch (action.type) {
     default: return state;
   }
-}
+};
 
 // Action Creators
 
