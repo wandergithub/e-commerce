@@ -7,8 +7,8 @@
 
 ## Built With
 
-- Major languages
-- Frameworks
+- React js
+- Redux
 - Technologies used
 
 ## Live Demo (if available)
