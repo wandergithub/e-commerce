@@ -2,6 +2,8 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchInitialData } from './redux/ecommerce/ecommerce';
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home'
 
 function App() {
   const dispatch = useDispatch();
@@ -10,7 +12,9 @@ function App() {
   }, []);
 
   return (
-    <h1>Hello e commerce app</h1>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 }
 

@@ -9,6 +9,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import store from './redux/config';
+import { BrowserRouter } from 'react-router-dom';
 
 const darkTheme = createTheme({
   palette: {
@@ -22,7 +23,9 @@ root.render(
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Provider store={store}>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </Provider>
     </ThemeProvider>
   </React.StrictMode>,
