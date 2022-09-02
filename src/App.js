@@ -1,17 +1,16 @@
 import './App.css';
-import Article from './components/Article';
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchCategories } from './redux/ecommerce/ecommerce';
 
 function App() {
   const dispatch = useDispatch();
-  useEffect(() =>{
+  useEffect(() => {
     dispatch(fetchCategories);
   }, []);
 
   return (
-    <Article />
+    <h1>Hello</h1>
   );
 }
 
