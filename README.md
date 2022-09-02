@@ -7,9 +7,9 @@
 
 ## Built With
 
-- React js
-- Redux
-- Technologies used
+- [React js]()
+- [Redux](https://redux.js.org/)
+- [Platzi Fake store API](https://fakeapi.platzi.com/doc/categories#get-all-categories)
 
 ## Live Demo (if available)
 
