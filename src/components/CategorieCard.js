@@ -1,13 +1,17 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import {
+  Card, CardContent, CardMedia, Typography, CardActions, Button,
+} from '@mui/material';
+import { PropTypes } from 'prop-types';
 
-const CategorieCard = (name, image) => {
-  return(
+const CategorieCard = (props) => {
+  const { image, name } = props;
+  return (
     <Card>
-      <CardMedia 
-      component="img"
-      height="140"
-      image={image}
-      alt="Items categorie"
+      <CardMedia
+        component="img"
+        height="140"
+        image={image}
+        alt="Items categorie"
       />
       <CardContent>
         <Typography variant="5" component="div">
@@ -15,10 +19,14 @@ const CategorieCard = (name, image) => {
         </Typography>
       </CardContent>
       <CardActions>
-          <Button size="small">Learn More</Button>
+        <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
   );
 };
 
+CategorieCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
 export default CategorieCard;
