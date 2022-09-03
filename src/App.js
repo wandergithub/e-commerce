@@ -1,9 +1,9 @@
 import './App.css';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchInitialData } from './redux/ecommerce/ecommerce';
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home'
+import { fetchInitialData } from './redux/ecommerce/ecommerce';
+import Home from './components/Home';
 
 function App() {
   const dispatch = useDispatch();
