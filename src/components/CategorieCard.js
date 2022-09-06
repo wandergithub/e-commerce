@@ -19,7 +19,7 @@ const CategorieCard = (props) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Buy now</Button>
       </CardActions>
     </Card>
   );
