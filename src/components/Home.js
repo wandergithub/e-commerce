@@ -1,20 +1,18 @@
 import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import CategorieCard from './CategorieCard';
 
 const Home = () => {
-  let name;
-  let image;
   const categories = useSelector((state) => state.categories);
-  try {
-    name = categories[1].name;
-    image = categories[1].image;
-  } catch {
-    name = 'Unknow';
-    image = 'Unknow';
-  }
 
   return (
-    <CategorieCard name={name} image={image} />
+    <div>
+      {categories !== undefined ? categories.map((categorie) => (
+        <li key={uuidv4()}>
+          <CategorieCard name={categorie.name} image={categorie.image} />
+        </li>
+      )) : false }
+    </div>
   );
 };
 

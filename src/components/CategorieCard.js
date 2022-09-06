@@ -26,7 +26,13 @@ const CategorieCard = (props) => {
 };
 
 CategorieCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  name: PropTypes.string,
 };
+
+CategorieCard.defaultProps = {
+  image: 'No URL',
+  name: 'Unknown name',
+};
+
 export default CategorieCard;
