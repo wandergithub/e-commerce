@@ -11,6 +11,9 @@
 - [Redux](https://redux.js.org/)
 - [Platzi Fake store API](https://fakeapi.platzi.com/doc/categories#get-all-categories)
 
+- Mobile first design
+- Responsive web design
+
 ## Live Demo (if available)
 
 [Live Demo Link](https://livedemo.com)

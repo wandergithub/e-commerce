@@ -5,3 +5,8 @@ body {
 p {
   text-align: justify;
 }
+
+#root {
+  display: flex;
+  justify-content: center;
+}

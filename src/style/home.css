@@ -1,0 +1,24 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px 15px;
+  margin: 15px;
+}
+
+@media only screen and (min-width: 450px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .cards-container {
+    width: 950px;
+  }
+}
