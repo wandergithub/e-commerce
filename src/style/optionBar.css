@@ -1,0 +1,9 @@
+.option-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.e-com {
+  height: 100px;
+}

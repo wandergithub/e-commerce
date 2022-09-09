@@ -10,7 +10,7 @@ import '../style/optionBar.css';
 const OptionBar = () => (
   <div className="option-bar">
     <div className="logo">
-      <img src={logo} alt="e commerce logo" />
+      <img className="e-com" src={logo} alt="e commerce logo" />
     </div>
     <div className="country-input" />
     <div className="search-bar">
