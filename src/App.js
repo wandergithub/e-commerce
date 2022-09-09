@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import { fetchInitialData } from './redux/ecommerce/ecommerce';
 import Home from './components/Home';
 import Header from './components/Header';
+import Item from './components/Item';
 
 function App() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/items" element={<Item />} />
       </Routes>
     </div>
   );
