@@ -1,7 +1,7 @@
 import OptionBar from './OptionBar';
 
 const Header = () => (
-  <div>
+  <div className="header">
     <OptionBar />
   </div>
 );

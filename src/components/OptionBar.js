@@ -1,9 +1,11 @@
 import {
-  IconButton, InputBase, Paper, Button,
+  IconButton, InputBase, Paper,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import LanguageIcon from '@mui/icons-material/Language';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 import logo from '../assets/logos/logo.png';
 import '../style/optionBar.css';
 
@@ -12,7 +14,11 @@ const OptionBar = () => (
     <div className="logo">
       <img className="e-com" src={logo} alt="e commerce logo" />
     </div>
-    <div className="country-input" />
+    <div className="country-input">
+      <IconButton type="button" sx={{ px: '10px' }} aria-label="search">
+        <AddLocationAltIcon color="primary" />
+      </IconButton>
+    </div>
     <div className="search-bar">
       <Paper>
         <InputBase
@@ -25,15 +31,16 @@ const OptionBar = () => (
         </IconButton>
       </Paper>
     </div>
-    <div className="language" />
-    <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-      <LanguageIcon color="primary" />
-    </IconButton>
+    <div className="language">
+      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+        <LanguageIcon color="primary" />
+      </IconButton>
+    </div>
     <div className="log-menu">
       {/* Menu desplegable sign in, log in */}
-      <Button variant="outlined">
-        Sign/log in
-      </Button>
+      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+        <AccountCircle color="primary" />
+      </IconButton>
     </div>
     <div className="cart">
       <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
