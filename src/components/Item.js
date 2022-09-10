@@ -1,12 +1,13 @@
 import {
-  Card, CardContent, CardMedia, Typography, CardActions, Button
+  Card, CardContent, CardMedia, Typography, CardActions, Button,
 } from '@mui/material';
 import { PropTypes } from 'prop-types';
-import '../style/item.css';
 
 const Item = (props) => {
-  const { id, title, price, images, description } = props;
-  
+  const {
+    id, title, price, images, description,
+  } = props;
+
   return (
     <Card variant="outlined">
       <CardMedia
@@ -20,7 +21,8 @@ const Item = (props) => {
           {title}
         </Typography>
         <Typography sx={{ mt: 1.5 }} color="text.secondary">
-          US${price}
+          US$
+          {price}
         </Typography>
       </CardContent>
       <CardActions>

@@ -4,6 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => (
   <Box sx={{ flexGrow: 1 }}>
@@ -19,6 +20,9 @@ const NavBar = () => (
           <Button variant="text">Lists</Button>
           <Button variant="text">Gift cards</Button>
           <Button variant="text">Sell</Button>
+          <Button variant="text">
+            <Link to="/" className="link">Show categories</Link>
+          </Button>
         </Stack>
       </Toolbar>
     </AppBar>
