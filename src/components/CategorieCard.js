@@ -1,5 +1,5 @@
 import {
-  Card, CardContent, CardMedia, Typography, CardActions, Button,
+  Card, CardContent, CardMedia, Typography, CardActions, Button
 } from '@mui/material';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -20,7 +20,9 @@ const CategorieCard = (props) => {
         </Typography>
       </CardContent>
       <CardActions>
-      <Link to="/items" state={{filter: name}}> See items</Link>
+        <Button variant="text">
+          <Link className="link" to="/items" state={{ filter: name }}> See items</Link>
+        </Button>
       </CardActions>
     </Card>
   );

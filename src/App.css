@@ -7,3 +7,7 @@ body {
   flex-direction: column;
   width: 100vw;
 }
+
+.link {
+  text-decoration: none;
+}
