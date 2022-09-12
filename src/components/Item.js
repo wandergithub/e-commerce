@@ -2,10 +2,13 @@ import {
   Card, CardContent, CardMedia, Typography, CardActions, Button,
 } from '@mui/material';
 import { PropTypes } from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/ecommerce/ecommerce';
 
 const Item = (props) => {
+  const dispatch = useDispatch();
   const {
-    title, price, images,
+    title, price, images, id,
   } = props;
 
   return (
@@ -29,7 +32,7 @@ const Item = (props) => {
         <Button variant="text">
           Item Details
         </Button>
-        <Button variant="text" color="secondary">
+        <Button variant="text" color="secondary" onClick={() => dispatch(addToCart(id))}>
           Add to cart
         </Button>
       </CardActions>
@@ -38,12 +41,14 @@ const Item = (props) => {
 };
 
 Item.propTypes = {
+  id: PropTypes.number,
   title: PropTypes.string,
   price: PropTypes.number,
   images: PropTypes.instanceOf(Array),
 };
 
 Item.defaultProps = {
+  id: 0,
   title: 'Unknown title',
   price: Math.random(),
   images: [],

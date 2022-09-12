@@ -2,6 +2,7 @@ import axios from 'axios';
 // Actions
 const CATEGORIES_FETCHED = 'my-app/ecommerce/CATEGORIES_FETCHED';
 const PRODUCTS_FETCHED = 'my-app/ecommerce/PRODUCTS_FETCHED';
+const ADDED_TO_CART = 'my-app/ecommerce/ADDED_TO_CART';
 
 // Reducer
 const reducer = (state = {}, action = {}) => {
@@ -10,6 +11,10 @@ const reducer = (state = {}, action = {}) => {
       return { ...state, categories: action.payload };
     case PRODUCTS_FETCHED:
       return { ...state, products: action.payload };
+    case ADDED_TO_CART:
+      if (state.cart === undefined) return { ...state, cart: [action.payload] };
+      if (state.cart.includes(action.payload)) return state;
+      return { ...state, cart: [...state.cart, action.payload] };
     default: return state;
   }
 };
@@ -17,6 +22,7 @@ const reducer = (state = {}, action = {}) => {
 // Action Creators
 export const loadCategories = (categories) => ({ type: CATEGORIES_FETCHED, payload: categories });
 export const loadProducts = (products) => ({ type: PRODUCTS_FETCHED, payload: products });
+export const addToCart = (id) => ({ type: ADDED_TO_CART, payload: id });
 
 // Thunks
 export const fetchInitialData = () => async (dispatch) => {
