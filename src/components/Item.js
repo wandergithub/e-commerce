@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 
 const Item = (props) => {
   const {
-    id, title, price, images, description,
+    title, price, images,
   } = props;
 
   return (
@@ -38,19 +38,15 @@ const Item = (props) => {
 };
 
 Item.propTypes = {
-  id: PropTypes.number,
   title: PropTypes.string,
   price: PropTypes.number,
-  images: PropTypes.array,
-  description: PropTypes.string,
+  images: PropTypes.instanceOf(Array),
 };
 
 Item.defaultProps = {
-  id: Math.random(),
   title: 'Unknown title',
   price: Math.random(),
   images: [],
-  description: 'No description available.',
 };
 
 export default Item;

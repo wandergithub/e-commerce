@@ -55,15 +55,15 @@ const desktop = () => (
 const mobile = () => (
   <div className="search-bar">
     <Paper>
-    <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+      <IconButton
+        size="large"
+        edge="start"
+        color="inherit"
+        aria-label="menu"
+        sx={{ mr: 2 }}
+      >
+        <MenuIcon />
+      </IconButton>
       <InputBase
         sx={{ ml: 1, flex: 1 }}
         placeholder="Search Item"
