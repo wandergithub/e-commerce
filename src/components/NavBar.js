@@ -24,7 +24,7 @@ const NavBar = () => {
               <Button variant="text">Gift cards</Button>
               <Button variant="text">Sell</Button>
               <Button variant="text">
-                <Link to="/" className="link">Show categories</Link>
+                <Link to="e-commerce/" className="link">Show categories</Link>
               </Button>
             </Stack>
           </Toolbar>
@@ -32,6 +32,8 @@ const NavBar = () => {
       </Box>
     );
   }
+
+  return null;
 };
 
 export default NavBar;

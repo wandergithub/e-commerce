@@ -20,9 +20,9 @@
 <img src="./app_screenshot.png" />
 
 
-## Live Demo (Not available for the moment)
+## Live Demo 
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://wandergithub.github.io/e-commerce/)
 
 
 ## Getting Started

@@ -18,6 +18,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="e-commerce/" element={<Home />} />
         <Route path="/items" element={<Items />} />
       </Routes>
     </div>
