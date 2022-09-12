@@ -25,27 +25,21 @@
 [Live Demo Link](https://wandergithub.github.io/e-commerce/)
 
 
-## Getting Started
+## Usage  <img src="https://img.icons8.com/external-filled-outline-geotatah/344/external-engine-merger-and-acquisition-filled-outline-filled-outline-geotatah.png" alt="Bootstrap Icon" style="width: 50px; height: 50px">
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+Be sure to have [Node.js](https://nodejs.org/) installed before proceeding.
 
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+```shell
+# Clone the repo
+git clone https://github.com/wandergithub/e-commerce.git
+# Change directory
+cd e-commerce
+# Install dependencies
+npm install
+# Start local server
+npm start
+```
+<!-- ### Run tests -->
 
 ## Author 👤
 
@@ -65,12 +59,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
