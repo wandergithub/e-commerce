@@ -8,6 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Item from './Item';
 import '../style/home.css';
+import '../style/items.css';
 
 const ALL = 'all items filter';
 const CLOTHES = 'Clothes';
@@ -24,12 +25,11 @@ const Items = () => {
 
   const handleChange = (event) => {
     setFilter({ filter: event.target.value });
-    console.log(state);
   };
 
   return (
-    <div className="cards-container">
-      <Box sx={{ minWidth: 120 }}>
+    <div className="cards-container outside">
+      <Box sx={{ minWidth: 120 }} className="filter-bar">
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Order By</InputLabel>
           <Select
@@ -48,12 +48,14 @@ const Items = () => {
           </Select>
         </FormControl>
       </Box>
-      {items !== undefined ? items.map((item) => {
-        if (item.category.name === state.filter || state.filter === ALL) {
-          return <Item className="card" key={item.id} title={item.title} price={item.price} images={item.images} id={item.id} description={item.description} />;
-        }
-        return false;
-      }) : false}
+      <div className="cards-container">
+        {items !== undefined ? items.map((item) => {
+          if (item.category.name === state.filter || state.filter === ALL) {
+            return <Item className="card" key={item.id} title={item.title} price={item.price} images={item.images} id={item.id} description={item.description} />;
+          }
+          return false;
+        }) : false}
+      </div>
     </div>
   );
 };
