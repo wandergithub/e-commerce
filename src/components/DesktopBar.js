@@ -47,9 +47,7 @@ const DesktopBar = (props) => {
       </div>
       <div className="cart">
         <Badge badgeContent={cart.length} color="primary">
-          <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-            <Cart items={cart} />
-          </IconButton>
+          <Cart items={cart} />
         </Badge>
       </div>
     </div>
