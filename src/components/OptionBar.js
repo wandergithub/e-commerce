@@ -1,7 +1,7 @@
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useSelector } from 'react-redux';
 import '../style/optionBar.css';
-import DesktopBar from './desktopBar';
+import DesktopBar from './DesktopBar';
 import MobileBar from './MobileBar';
 
 const OptionBar = () => {
