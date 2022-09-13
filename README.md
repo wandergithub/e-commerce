@@ -17,6 +17,7 @@
 
 ## App screenshot
 
+<img src="./app_screenshot(2).png" />
 <img src="./app_screenshot.png" />
 
 
