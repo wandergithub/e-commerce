@@ -4,16 +4,13 @@ import {
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import LanguageIcon from '@mui/icons-material/Language';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import { useState } from 'react';
 import { PropTypes } from 'prop-types';
+import Cart from './Cart';
 import logo from '../assets/logos/logo.png';
 
 const DesktopBar = (props) => {
-  const [state, setState] = useState(false);
-
   const { cart } = props;
   return (
     <div className="option-bar">
@@ -50,9 +47,8 @@ const DesktopBar = (props) => {
       </div>
       <div className="cart">
         <Badge badgeContent={cart.length} color="primary">
-          <IconButton type="button" sx={{ p: '10px' }} aria-label="search" onClick={() => setState(!state)}>
-            <ShoppingCartOutlinedIcon color="primary" />
-            {state ? <h6>assssssssss</h6> : <h1>assssssssssssssssssss</h1>}
+          <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+            <Cart items={cart} />
           </IconButton>
         </Badge>
       </div>
