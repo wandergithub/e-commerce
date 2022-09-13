@@ -10,6 +10,9 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import Fab from '@mui/material/Fab';
+import ShopIcon from '@mui/icons-material/Shop';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
 import Avatar from '@mui/material/Avatar';
 import CloseIcon from '@mui/icons-material/Close';
@@ -57,6 +60,10 @@ const Cart = (props) => {
             <Typography sx={{ ml: 2, flex: 1 }} variant="h5" component="h1">
               Shopping cart
             </Typography>
+            <Fab variant="extended">
+              <ShopIcon sx={{ mr: 1 }} />
+              Complete Buy
+            </Fab>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h5" component="h1">
               Total: US$
               {' '}
@@ -71,6 +78,10 @@ const Cart = (props) => {
           {items.map((item) => (
             <ListItem key={item.id} button>
               <ListItemText primary={item.title} secondary={item.price} />
+              <Fab variant="extended" sx={{ mr: 10 }}>
+                <DeleteForeverIcon />
+                Delete Item
+              </Fab>
               <ListItemAvatar>
                 <Avatar
                   alt={item.title}
