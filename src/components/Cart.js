@@ -60,7 +60,7 @@ const Cart = (props) => {
             <Typography sx={{ ml: 2, flex: 1 }} variant="h5" component="h1">
               Shopping cart
             </Typography>
-            <Fab variant="extended">
+            <Fab variant="extended" color="success">
               <ShopIcon sx={{ mr: 1 }} />
               Complete Buy
             </Fab>
@@ -78,7 +78,7 @@ const Cart = (props) => {
           {items.map((item) => (
             <ListItem key={item.id} button>
               <ListItemText primary={item.title} secondary={item.price} />
-              <Fab variant="extended" sx={{ mr: 10 }}>
+              <Fab variant="extended" sx={{ mr: 10 }} color="error">
                 <DeleteForeverIcon />
                 Delete Item
               </Fab>
