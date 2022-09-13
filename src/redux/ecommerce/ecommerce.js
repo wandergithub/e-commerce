@@ -5,14 +5,13 @@ const PRODUCTS_FETCHED = 'my-app/ecommerce/PRODUCTS_FETCHED';
 const ADDED_TO_CART = 'my-app/ecommerce/ADDED_TO_CART';
 
 // Reducer
-const reducer = (state = {}, action = {}) => {
+const reducer = (state = { cart: [] }, action = {}) => {
   switch (action.type) {
     case CATEGORIES_FETCHED:
       return { ...state, categories: action.payload };
     case PRODUCTS_FETCHED:
       return { ...state, products: action.payload };
     case ADDED_TO_CART:
-      if (state.cart === undefined) return { ...state, cart: [action.payload] };
       if (state.cart.includes(action.payload)) return state;
       return { ...state, cart: [...state.cart, action.payload] };
     default: return state;
@@ -22,7 +21,7 @@ const reducer = (state = {}, action = {}) => {
 // Action Creators
 export const loadCategories = (categories) => ({ type: CATEGORIES_FETCHED, payload: categories });
 export const loadProducts = (products) => ({ type: PRODUCTS_FETCHED, payload: products });
-export const addToCart = (id) => ({ type: ADDED_TO_CART, payload: id });
+export const addToCart = (item) => ({ type: ADDED_TO_CART, payload: item });
 
 // Thunks
 export const fetchInitialData = () => async (dispatch) => {

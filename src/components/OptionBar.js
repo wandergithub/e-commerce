@@ -1,4 +1,5 @@
 import {
+  Badge,
   IconButton, InputBase, Paper,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
@@ -8,10 +9,11 @@ import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useSelector } from 'react-redux';
 import logo from '../assets/logos/logo.png';
 import '../style/optionBar.css';
 
-const desktop = () => (
+const desktop = (cartLength) => (
   <div className="option-bar">
     <div className="logo">
       <img className="e-com" src={logo} alt="e commerce logo" />
@@ -45,9 +47,11 @@ const desktop = () => (
       </IconButton>
     </div>
     <div className="cart">
-      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-        <ShoppingCartOutlinedIcon color="primary" />
-      </IconButton>
+      <Badge badgeContent={cartLength} color="primary">
+        <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+          <ShoppingCartOutlinedIcon color="primary" />
+        </IconButton>
+      </Badge>
     </div>
   </div>
 );
@@ -77,9 +81,10 @@ const mobile = () => (
 );
 
 const OptionBar = () => {
+  const cart = useSelector((state) => state.cart);
   if (useMediaQuery('(min-width:450px)')) {
     return (
-      desktop()
+      desktop(cart.length)
     );
   }
 

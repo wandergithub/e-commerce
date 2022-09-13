@@ -12,7 +12,7 @@ const Item = (props) => {
   } = props;
 
   return (
-    <Card variant="outlined">
+    <Card variant="outlined" key={id}>
       <CardMedia
         component="img"
         height="200"
@@ -32,7 +32,7 @@ const Item = (props) => {
         <Button variant="text">
           Item Details
         </Button>
-        <Button variant="text" color="secondary" onClick={() => dispatch(addToCart(id))}>
+        <Button variant="text" color="secondary" onClick={() => dispatch(addToCart(props))}>
           Add to cart
         </Button>
       </CardActions>
