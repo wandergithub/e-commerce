@@ -31,7 +31,7 @@ const Items = () => {
     <div className="cards-container outside">
       <Box sx={{ minWidth: 120 }} className="filter-bar">
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Order By</InputLabel>
+          <InputLabel id="demo-simple-select-label">Category</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"

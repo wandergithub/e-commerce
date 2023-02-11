@@ -18,13 +18,13 @@ const NavBar = () => {
                 <MenuIcon />
                 All
               </Button>
-              <Button variant="text">Day offers</Button>
-              <Button variant="text">Client Service</Button>
-              <Button variant="text">Lists</Button>
+              <Button variant="text">Today&apos;s Deals</Button>
+              <Button variant="text"><Link to="customer_service/" className="link">Customer Service</Link></Button>
+              <Button variant="text">Registry</Button>
               <Button variant="text">Gift cards</Button>
               <Button variant="text">Sell</Button>
               <Button variant="text">
-                <Link to="e-commerce/" className="link">Show categories</Link>
+                <Link to="e-commerce/" className="link">All categories</Link>
               </Button>
             </Stack>
           </Toolbar>

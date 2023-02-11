@@ -6,6 +6,7 @@ import { fetchInitialData } from './redux/ecommerce/ecommerce';
 import Home from './components/Home';
 import Header from './components/Header';
 import Items from './components/Items';
+import CustomerService from './components/CustomerService';
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="e-commerce/" element={<Home />} />
         <Route path="/items" element={<Items />} />
+        <Route path="/customer_service" element={<CustomerService />} />
       </Routes>
     </div>
   );
