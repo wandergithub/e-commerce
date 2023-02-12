@@ -33,26 +33,50 @@ const CustomerService = () => {
     },
     {
       img: {
-        link: 'https://m.media-amazon.com/images/G/01/x-locale/cs/help/images/gateway/self-service/fshub/fshub_order_v2._CB432205751_.png',
+        link: 'https://m.media-amazon.com/images/G/01/x-locale/cs/help/images/gateway/self-service/fshub/fshub_device_v2._CB432205751_.png',
         alt: 'A mailing box',
       },
-      text: 'A delivery, order or return',
+      text: 'Kindle, Fire, Alexa or Other Amazon Devices',
       path: 'somewhere/',
     },
     {
       img: {
-        link: 'https://m.media-amazon.com/images/G/01/x-locale/cs/help/images/gateway/self-service/fshub/fshub_prime_v2._CB432205750_.png',
+        link: 'https://m.media-amazon.com/images/G/01/x-locale/cs/help/images/gateway/self-service/fshub/fshub_account_v2._CB432205751_.png',
         alt: 'Amazon Prime logo',
       },
-      text: 'Prime',
+      text: 'Memberships, subscriptions or communications',
       path: 'somewhere/',
     },
     {
       img: {
-        link: 'https://m.media-amazon.com/images/G/01/x-locale/cs/help/images/gateway/self-service/fshub/fshub_paymentgc_v2._CB432205751_.png',
-        alt: 'Amazon Prime logo',
+        link: 'https://m.media-amazon.com/images/G/01/x-locale/cs/help/images/gateway/self-service/fshub/fshub_login_security_v2._CB432205751_.png',
+        alt: 'Lock image logo',
       },
-      text: 'Payment, charges or gift cards',
+      text: 'Login, address, security & privacy',
+      path: 'somewhere/',
+    },
+    {
+      img: {
+        link: 'https://m.media-amazon.com/images/G/01/x-locale/cs/help/images/gateway/self-service/fshub/fshub_dcontent_v3._CB428304563_.png',
+        alt: 'Lock image logo',
+      },
+      text: 'eBooks, Prime Videos or Music',
+      path: 'somewhere/',
+    },
+    {
+      img: {
+        link: 'https://m.media-amazon.com/images/G/01/x-locale/cs/help/images/gateway/self-service/fshub/accessibility._CB653395151_.png',
+        alt: 'Lock image logo',
+      },
+      text: 'Accessibility',
+      path: 'somewhere/',
+    },
+    {
+      img: {
+        link: 'https://m.media-amazon.com/images/G/01/x-locale/cs/help/images/gateway/self-service/fshub/fshub_somethingelse_v3._CB428112012_.png',
+        alt: 'Lock image logo',
+      },
+      text: 'Something else',
       path: 'somewhere/',
     },
   ];
@@ -68,7 +92,7 @@ const CustomerService = () => {
         </Typography>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           {typesOfServices.map((service) => (
-            <Grid item xs={6} key={uuidv4()}>
+            <Grid item xs={4} key={uuidv4()}>
               <Link to={service.path}>
                 <Card maxWidth="sm" className="flex-row">
                   <img src={service.img.link} alt={service.img.alt} />

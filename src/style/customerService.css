@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    padding: 10px;
 }
 
 section {
@@ -11,4 +12,8 @@ section {
 
 a {
     text-decoration: none;
+}
+
+img {
+    width: 60px;
 }
