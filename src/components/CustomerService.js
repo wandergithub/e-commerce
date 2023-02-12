@@ -1,6 +1,13 @@
 import {
-  Typography, Container, Card, Grid,
+  Typography,
+  Container,
+  Card,
+  Grid,
+  Paper,
+  InputBase,
+  IconButton,
 } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 import '../style/customerService.css';
 import { v4 as uuidv4 } from 'uuid';
@@ -82,7 +89,7 @@ const CustomerService = () => {
   ];
   return (
     <Container>
-      <section>
+      <section className="section-1">
         <Typography variant="h4" gutterBottom>
           Welcome to e-commerce Customer service
         </Typography>
@@ -102,6 +109,24 @@ const CustomerService = () => {
             </Grid>
           ))}
         </Grid>
+      </section>
+      <section className="section-2">
+        <Typography variant="h5" gutterBottom>
+          {' '}
+          Search on our help library
+        </Typography>
+        <div className="search-bar">
+          <Paper>
+            <InputBase
+              sx={{ ml: 1, flex: 1 }}
+              placeholder="Search Item"
+              inputProps={{ 'aria-label': 'search item' }}
+            />
+            <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+              <SearchIcon color="primary" />
+            </IconButton>
+          </Paper>
+        </div>
       </section>
     </Container>
   );
