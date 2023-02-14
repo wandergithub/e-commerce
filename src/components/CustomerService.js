@@ -12,6 +12,10 @@ import { Link } from 'react-router-dom';
 import '../style/customerService.css';
 import { v4 as uuidv4 } from 'uuid';
 
+const searchBarStyle = {
+  display: 'flex',
+};
+
 const CustomerService = () => {
   const typesOfServices = [
     {
@@ -116,7 +120,7 @@ const CustomerService = () => {
           Search on our help library
         </Typography>
         <div className="search-bar">
-          <Paper>
+          <Paper style={searchBarStyle}>
             <InputBase
               sx={{ ml: 1, flex: 1 }}
               placeholder="Search Item"
