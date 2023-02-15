@@ -3,6 +3,7 @@ import axios from 'axios';
 const CATEGORIES_FETCHED = 'my-app/ecommerce/CATEGORIES_FETCHED';
 const PRODUCTS_FETCHED = 'my-app/ecommerce/PRODUCTS_FETCHED';
 const ADDED_TO_CART = 'my-app/ecommerce/ADDED_TO_CART';
+const DELETED_ITEM_CART = 'my-app/ecommerce/ADDED_TO_CART';
 
 // Reducer
 const reducer = (state = { cart: [] }, action = {}) => {
@@ -14,6 +15,8 @@ const reducer = (state = { cart: [] }, action = {}) => {
     case ADDED_TO_CART:
       if (state.cart.includes(action.payload)) return state;
       return { ...state, cart: [...state.cart, action.payload] };
+    case DELETED_ITEM_CART:
+      return { ...state, cart: [...state.cart.filter(item => item.id !== action.payload)] }
     default: return state;
   }
 };
@@ -22,6 +25,7 @@ const reducer = (state = { cart: [] }, action = {}) => {
 export const loadCategories = (categories) => ({ type: CATEGORIES_FETCHED, payload: categories });
 export const loadProducts = (products) => ({ type: PRODUCTS_FETCHED, payload: products });
 export const addToCart = (item) => ({ type: ADDED_TO_CART, payload: item });
+export const deleteFromCart = (item) => ({ type: DELETED_ITEM_CART, payload: item.id });
 
 // Thunks
 export const fetchInitialData = () => async (dispatch) => {

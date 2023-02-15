@@ -72,6 +72,7 @@ const Cart = (props) => {
               <Fab variant="extended" sx={{ mr: 10 }} color="error">
                 <DeleteForeverIcon />
                 Delete Item
+
               </Fab>
               <ListItemAvatar>
                 <Avatar
