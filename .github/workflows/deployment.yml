@@ -21,15 +21,13 @@ jobs:
         with:
           node-version: 15.x
 
-
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Set identity email
-        run:  git config --global user.email "wandergonzalez0@hotmail.com"
-
-      - name: Set identity name
-        run:  git config --global user.name "Wander Gonzalez"
-
-      - name: Build
-        run: npm run deploy
+      - name: Build and deploy
+        run: |
+          npm run build
+          npx gh-pages -d build --user "wandergithub" --email "wandergonzalez0@hotmail.com"
+        env:
+          CI: true
+          GITHUB_TOKEN: ${{ secrets.PAT }}
