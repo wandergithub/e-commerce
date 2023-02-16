@@ -25,5 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Set identity
+        run:  git config --global user.email "wandergonzalez0@hotmail.com"
+        run:  git config --global user.name "Wander Gonzalez"
+
       - name: Build
         run: npm run deploy
