@@ -27,7 +27,7 @@ jobs:
       - name: Build and deploy
         run: |
           npm run build
-          npx gh-pages -d build --user "wandergithub <wandergonzalez0@hotmail.com>" -b dev
+          npx gh-pages -d build --user "Wander Gonzalez <wandergonzalez0@hotmail.com>" -b dev
         env:
           CI: true
           GITHUB_TOKEN: ${{ secrets.PAT }}
