@@ -1,14 +1,14 @@
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import MenuIcon from '@mui/icons-material/Menu';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
-import { useMediaQuery } from '@mui/material';
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import MenuIcon from "@mui/icons-material/Menu";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import { useMediaQuery } from "@mui/material";
 
 const NavBar = () => {
-  if (useMediaQuery('(min-width:450px)')) {
+  if (useMediaQuery("(min-width:450px)")) {
     return (
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
@@ -19,13 +19,14 @@ const NavBar = () => {
                 All
               </Button>
               <Button variant="text">Today&apos;s Deals</Button>
-              <Button variant="text"><Link to="customer_service/" className="link">Customer Service</Link></Button>
+              <Button variant="text">
+                <Link to="customer_service/" className="link">
+                  Customer Service
+                </Link>
+              </Button>
               <Button variant="text">Registry</Button>
               <Button variant="text">Gift cards</Button>
               <Button variant="text">Sell</Button>
-              <Button variant="text">
-                <Link to="e-commerce/" className="link">All categories</Link>
-              </Button>
             </Stack>
           </Toolbar>
         </AppBar>
