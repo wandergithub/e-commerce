@@ -27,7 +27,7 @@ jobs:
       - name: Build and deploy
         run: |
           npm run build
-          npx gh-pages -d build --user ${{ github.actor }} --remote origin
+          npx gh-pages -d build
 
         env:
           CI: true
