@@ -16,7 +16,7 @@ const reducer = (state = { cart: [] }, action = {}) => {
       if (state.cart.includes(action.payload)) return state;
       return { ...state, cart: [...state.cart, action.payload] };
     case DELETED_ITEM_CART:
-      return { ...state, cart: [...state.cart.filter(item => item.id !== action.payload)] }
+      return { ...state, cart: [...state.cart.filter((item) => item.id !== action.payload)] };
     default: return state;
   }
 };
