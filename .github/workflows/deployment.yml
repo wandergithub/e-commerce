@@ -26,7 +26,7 @@ jobs:
 
       - name: Build and deploy
         run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/wandergithub/e-commerce.git
           npm run build
           npx gh-pages -d build -u "wandergithub <wandergonzalez0@hotmail.com>"
 
