@@ -1,23 +1,23 @@
 .flex-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 .section-1 {
-    margin: 30px;
+  margin: 30px;
 }
 
 .section-2 {
-    margin: 30px;
+  margin: 30px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 img {
-    width: 60px;
+  width: 60px;
 }

@@ -7,6 +7,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 import Cart from './Cart';
 import logo from '../assets/logos/logo.png';
 
@@ -15,7 +16,9 @@ const DesktopBar = (props) => {
   return (
     <div className="option-bar">
       <div className="logo">
-        <img className="e-com" src={logo} alt="e commerce logo" />
+        <Link to="e-commerce/" className="link">
+          <img className="e-com" src={logo} alt="e commerce logo" />
+        </Link>
       </div>
       <div className="country-input">
         <IconButton type="button" sx={{ px: '10px' }} aria-label="search">
