@@ -2,6 +2,8 @@
 
 > Completely responsive E-commerce web page. build with React/Redux and MaterialUI-styled-components. This allows the user to navigate through different categories of items, filter them by category and add them to the shopping cart. Users can manage their current bag on the shopping cart containing a list of items where each one can be deleted. In the shopping cart, the user can delete or finish buying.
 
+*Everyone is welcome to contribute to the project. Once you have a significant contribution, you can add it to your portfolio and show to recruiters your experience.*
+
 
 ## Built With
 
@@ -54,6 +56,13 @@ npm start
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
+
+### To contribute to this project:
+
+1. Go to [issues page](../../issues/).
+2. Choose your issue(You can assign yourself), ask questions or suggest improvements.
+3. Go to [Kanban Board](https://github.com/users/wandergithub/projects/4/views/1) and update your issue status.
+4. Fork the repo, make your changes, and ask for a PR.
 
 ## Show your support
 

@@ -23,11 +23,11 @@ const Cart = (props) => {
   const [total, setTotal] = useState(0);
 
   const dispatch = useDispatch();
-  
+
   // Behavior functions
   useEffect(() => {
     let a = 0;
-    items.forEach(element => {
+    items.forEach((element) => {
       a += element.price;
     });
     setTotal(a);
