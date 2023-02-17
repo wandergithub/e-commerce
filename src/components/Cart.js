@@ -1,4 +1,4 @@
-import { useState, forwardRef } from 'react';
+import { useState, forwardRef, useEffect } from 'react';
 import {
   Button, Dialog, ListItemText, ListItem,
   ListItemAvatar, List, Divider, AppBar,
@@ -23,9 +23,17 @@ const Cart = (props) => {
   const [total, setTotal] = useState(0);
 
   const dispatch = useDispatch();
+  
+  // Behavior functions
+  useEffect(() => {
+    let a = 0;
+    items.forEach(element => {
+      a += element.price;
+    });
+    setTotal(a);
+  }, [items]);
 
   const handleClickOpen = () => {
-    items.forEach((item) => setTotal(total + item.price));
     setOpen(true);
   };
 
