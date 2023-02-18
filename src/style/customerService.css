@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
   padding: 10px;
 }
 
@@ -20,4 +19,5 @@ a {
 
 img {
   width: 60px;
+  padding-right: 30px;
 }
