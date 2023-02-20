@@ -9,6 +9,10 @@ const store = configureStore({
         name: "categorie 1",
         image: "image sample 1",
       },
+      {
+        name: "categorie 2",
+        image: "image sample 2",
+      },
     ],
   },
 });

@@ -6,7 +6,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 describe("Home component", () => {
-  test("loads and display categories", async () => {
+  beforeEach(() => {
     render(
       <Provider store={store}>
         <BrowserRouter>
@@ -14,25 +14,16 @@ describe("Home component", () => {
         </BrowserRouter>
       </Provider>
     );
-
-    // ACT
-
-    // Assert
+  });
+  test("loads and display categories", async () => {
     expect(screen.getByText("categorie 1")).toBeInTheDocument();
   });
 
   test("SEE ITEMS link takes you to items page when clicked", () => {
-    render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Home />
-        </BrowserRouter>
-      </Provider>
-    );
-    const link = screen.getByText("See items");
-    
+    const links = screen.getAllByText("See items");
+
     expect(window.location.pathname).toBe("/");
-    fireEvent.click(link);
+    fireEvent.click(links[0]);
 
     expect(window.location.pathname).toBe("/items");
   });
