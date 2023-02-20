@@ -19,6 +19,11 @@ describe("Home component", () => {
     expect(screen.getByText("categorie 1")).toBeInTheDocument();
   });
 
+  test("loads and display all the categories", async () => {
+    let categories = screen.getAllByText(/categorie/);
+    expect(categories.length()).toBe(2);
+  });
+
   test("SEE ITEMS link takes you to items page when clicked", () => {
     const links = screen.getAllByText("See items");
 
