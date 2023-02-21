@@ -9,6 +9,8 @@ _Everyone is welcome to contribute to the project. Once you have a significant c
 - [React js]()
 - [Redux](https://redux.js.org/)
 - [Material UI/MUI](https://mui.com)
+- [Jest](https://jestjs.io/)
+- [React Testing library](https://testing-library.com/docs/react-testing-library/intro/)
 - [GitHub CI workflows](https://github.com/wandergithub/e-commerce/actions)
   - Automated deployment
   - Automated testing
