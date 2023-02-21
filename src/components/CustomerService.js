@@ -101,7 +101,8 @@ const CustomerService = () => {
           What would you like help with today? You can quickly take care of most
           things here, or connect with us when needed.
         </Typography>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+
+        <div className="customer-service-grid">
           {typesOfServices.map((service) => (
             <Grid item xs={4} key={uuidv4()}>
               <Link to={service.path}>
@@ -112,7 +113,7 @@ const CustomerService = () => {
               </Link>
             </Grid>
           ))}
-        </Grid>
+        </div>
       </section>
       <section className="section-2">
         <Typography variant="h5" gutterBottom>

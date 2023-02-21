@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
 
 const NavBar = () => {
-  if (useMediaQuery('(min-width:450px)')) {
+  if (useMediaQuery('(min-width:650px)')) {
     return (
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">

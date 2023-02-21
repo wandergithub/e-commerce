@@ -1,5 +1,10 @@
 import {
-  Card, CardContent, CardMedia, Typography, CardActions, Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  CardActions,
+  Button,
 } from '@mui/material';
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
@@ -29,10 +34,12 @@ const Item = (props) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="text">
-          Item Details
-        </Button>
-        <Button variant="text" color="secondary" onClick={() => dispatch(addToCart(props))}>
+        <Button variant="text">Item Details</Button>
+        <Button
+          variant="text"
+          color="secondary"
+          onClick={() => dispatch(addToCart(props))}
+        >
           Add to cart
         </Button>
       </CardActions>
