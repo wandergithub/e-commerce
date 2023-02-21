@@ -1,8 +1,17 @@
 .flex-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  min-height: 150px;
   align-items: center;
-  padding: 10px;
+  justify-content: center;
+}
+
+.customer-service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  text-align: center;
+  margin-top: 30px;
 }
 
 .section-1 {
@@ -17,7 +26,21 @@ a {
   text-decoration: none;
 }
 
-img {
-  width: 85px;
-  padding-right: 30px;
+.flex-row > img {
+  width: 65px;
+  height: 65px;
+}
+
+@media screen and (max-width: 800px) {
+  .customer-service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .flex-row {
+    width: 290px;
+    margin: auto;
+  }
 }

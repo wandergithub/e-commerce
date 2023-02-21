@@ -13,9 +13,11 @@
   display: none;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 650px) {
   .search-bar {
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 10px 0;
   }
 }

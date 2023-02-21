@@ -7,15 +7,11 @@ import MobileBar from './MobileBar';
 const OptionBar = () => {
   const cart = useSelector((state) => state.cart);
 
-  if (useMediaQuery('(min-width:450px)')) {
-    return (
-      <DesktopBar cart={cart} />
-    );
+  if (useMediaQuery('(min-width:650px)')) {
+    return <DesktopBar cart={cart} />;
   }
 
-  return (
-    <MobileBar />
-  );
+  return <MobileBar />;
 };
 
 export default OptionBar;
