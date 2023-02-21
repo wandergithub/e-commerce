@@ -10,8 +10,8 @@ _Everyone is welcome to contribute to the project. Once you have a significant c
 - [Redux](https://redux.js.org/)
 - [Material UI/MUI](https://mui.com)
 - [GitHub CI workflows](https://github.com/wandergithub/e-commerce/actions)
-    - Automated deployment
-    - Automated testing
+  - Automated deployment
+  - Automated testing
 - [Platzi Fake store API](https://fakeapi.platzi.com/doc/categories#get-all-categories)
 
 - Mobile first design
