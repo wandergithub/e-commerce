@@ -51,7 +51,7 @@ npm start
 
 [![Linkedin Badge](https://img.shields.io/badge/-Wander%20Gonzalez%20Martinez-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/wander-gonzalez/)](https://www.linkedin.com/in/wander-gonzalez/)&nbsp;
 
-## Future features
+## 🛠️ Future features
 
 - I'm planning to create a Rails API.
     - So we can allow the users manage their selling accounts.
