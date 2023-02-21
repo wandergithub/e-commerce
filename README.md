@@ -51,6 +51,15 @@ npm start
 
 [![Linkedin Badge](https://img.shields.io/badge/-Wander%20Gonzalez%20Martinez-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/wander-gonzalez/)](https://www.linkedin.com/in/wander-gonzalez/)&nbsp;
 
+## Future features
+
+- I'm planning to create a Rails API.
+    - So we can allow the users manage their selling accounts.
+    - Then users can publish their items.
+    - When users complete a buy with a shopping cart, the app put the shopper in contact with all the sellers with an automated whatsapp message.
+    - Now people can sell and buy real items.
+    - We could add an option to restrict interactions of users by the same contry so deals can be made easily
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
