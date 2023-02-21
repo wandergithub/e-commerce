@@ -12,6 +12,7 @@ _Everyone is welcome to contribute to the project. Once you have a significant c
 - [GitHub CI workflows](https://github.com/wandergithub/e-commerce/actions)
   - Automated deployment
   - Automated testing
+  - Automated linters
 - [Platzi Fake store API](https://fakeapi.platzi.com/doc/categories#get-all-categories)
 
 - Mobile first design
