@@ -9,39 +9,15 @@ import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
   NotificationContainer,
-  NotificationManager,
 } from 'react-notifications';
 import Cart from './Cart';
 import logo from '../assets/logos/logo.png';
 import 'react-notifications/lib/notifications.css';
+import createNotification from './shared/Notifications';
 
 const DesktopBar = (props) => {
   const { cart } = props;
-  // Notifications
-  const createNotification = (type) => () => {
-    switch (type) {
-      case 'info':
-        NotificationManager.info('Demo version, working on this feature...');
-        break;
-      case 'success':
-        NotificationManager.success('Success message', 'Title here');
-        break;
-      case 'warning':
-        NotificationManager.warning(
-          'Warning message',
-          'Close after 3000ms',
-          3000,
-        );
-        break;
-      case 'error':
-        NotificationManager.error('Error message', 'Click me!', 5000, () => {
-          alert('callback');
-        });
-        break;
-      default:
-        break;
-    }
-  };
+
   return (
     <div className="option-bar">
       <div className="logo">
