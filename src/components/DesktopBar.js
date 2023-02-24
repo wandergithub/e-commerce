@@ -21,7 +21,7 @@ const DesktopBar = (props) => {
   const createNotification = (type) => () => {
     switch (type) {
       case 'info':
-        NotificationManager.info('This is a demo version, we are working on this feature right now.');
+        NotificationManager.info('Demo version, working on this feature...');
         break;
       case 'success':
         NotificationManager.success('Success message', 'Title here');
@@ -56,7 +56,7 @@ const DesktopBar = (props) => {
           aria-label="search"
           onClick={createNotification('info')}
         >
-          <AddLocationAltIcon color="primary" />
+          <AddLocationAltIcon color="primary." />
         </IconButton>
       </div>
       <div className="search-bar">
@@ -67,7 +67,7 @@ const DesktopBar = (props) => {
             inputProps={{ 'aria-label': 'search item' }}
           />
           <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-            <SearchIcon color="primary" />
+            <SearchIcon color="primary." />
           </IconButton>
         </Paper>
       </div>
@@ -78,7 +78,7 @@ const DesktopBar = (props) => {
           aria-label="search"
           onClick={createNotification('info')}
         >
-          <LanguageIcon color="primary" />
+          <LanguageIcon color="primary." />
         </IconButton>
       </div>
       <div className="log-menu">
@@ -89,7 +89,7 @@ const DesktopBar = (props) => {
           aria-label="search"
           onClick={createNotification('info')}
         >
-          <AccountCircle color="primary" />
+          <AccountCircle color="primary.darker" />
         </IconButton>
       </div>
       <div className="cart">
