@@ -1,4 +1,7 @@
 import './App.css';
+import {
+  NotificationContainer,
+} from 'react-notifications';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -23,6 +26,7 @@ function App() {
         <Route path="/items" element={<Items />} />
         <Route path="/customer_service" element={<CustomerService />} />
       </Routes>
+      <NotificationContainer />
     </div>
   );
 }

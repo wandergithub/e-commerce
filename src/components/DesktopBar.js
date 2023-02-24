@@ -7,9 +7,6 @@ import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
-import {
-  NotificationContainer,
-} from 'react-notifications';
 import Cart from './Cart';
 import logo from '../assets/logos/logo.png';
 import 'react-notifications/lib/notifications.css';
@@ -20,17 +17,18 @@ const DesktopBar = (props) => {
 
   return (
     <div className="option-bar">
-      <div className="logo">
+      <IconButton aria-label="delete">
         <Link to="e-commerce/" className="link">
           <img className="e-com" src={logo} alt="e commerce logo" />
         </Link>
-      </div>
+      </IconButton>
       <div className="country-input">
         <IconButton
           type="button"
           sx={{ px: '10px' }}
           aria-label="search"
           onClick={createNotification('info')}
+          disabled
         >
           <AddLocationAltIcon color="primary." />
         </IconButton>
@@ -42,7 +40,12 @@ const DesktopBar = (props) => {
             placeholder="Search Item"
             inputProps={{ 'aria-label': 'search item' }}
           />
-          <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+          <IconButton
+            type="button"
+            sx={{ p: '10px' }}
+            aria-label="search"
+            disabled
+          >
             <SearchIcon color="primary." />
           </IconButton>
         </Paper>
@@ -53,6 +56,7 @@ const DesktopBar = (props) => {
           sx={{ p: '10px' }}
           aria-label="search"
           onClick={createNotification('info')}
+          disabled
         >
           <LanguageIcon color="primary." />
         </IconButton>
@@ -64,6 +68,7 @@ const DesktopBar = (props) => {
           sx={{ p: '10px' }}
           aria-label="search"
           onClick={createNotification('info')}
+          disabled
         >
           <AccountCircle color="primary.darker" />
         </IconButton>
@@ -73,7 +78,6 @@ const DesktopBar = (props) => {
           <Cart items={cart} />
         </Badge>
       </div>
-      <NotificationContainer />
     </div>
   );
 };

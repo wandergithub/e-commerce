@@ -1,4 +1,4 @@
-import NotificationManager from 'react-notifications';
+import { NotificationManager } from 'react-notifications';
 
 const createNotification = (type) => () => {
   switch (type) {
