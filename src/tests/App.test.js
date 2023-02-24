@@ -20,7 +20,7 @@ describe("App integration test", () => {
     expect(window.location.pathname).toBe("/");
   });
 
-  it("renders correctly", () => {
+  test("renders correctly", () => {
     const tree = renderer
       .create(
         <Provider store={store}>
