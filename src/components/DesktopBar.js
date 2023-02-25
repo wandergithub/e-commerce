@@ -44,11 +44,11 @@ const DesktopBar = (props) => {
       </div>
       <div className="log-menu">
         {/* Menu desplegable sign in, log in */}
-          <Link to="profile" className="link">
-        <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-          <AccountCircle color="primary" />
-        </IconButton>
-          </Link>
+        <Link to="profile" className="link">
+          <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+            <AccountCircle color="primary" />
+          </IconButton>
+        </Link>
       </div>
       <div className="cart">
         <Badge badgeContent={cart.length} color="primary">
