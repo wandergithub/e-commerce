@@ -6,7 +6,6 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
-import createNotification from './shared/Notifications';
 
 const NavBar = () => {
   if (useMediaQuery('(min-width:650px)')) {
@@ -15,19 +14,19 @@ const NavBar = () => {
         <AppBar position="static">
           <Toolbar variant="dense">
             <Stack spacing={2} direction="row">
-              <Button variant="outlined" onClick={createNotification('info')} disabled>
+              <Button variant="text">
                 <MenuIcon />
                 All
               </Button>
-              <Button variant="outlined" onClick={createNotification('info')} disabled>Today&apos;s Deals</Button>
-              <Button variant="outlined">
+              <Button variant="text">Today&apos;s Deals</Button>
+              <Button variant="text">
                 <Link to="customer_service/" className="link">
                   Customer Service
                 </Link>
               </Button>
-              <Button variant="outlined" onClick={createNotification('info')} disabled>Registry</Button>
-              <Button variant="outlined" onClick={createNotification('info')} disabled>Gift cards</Button>
-              <Button variant="outlined" onClick={createNotification('info')} disabled>Sell</Button>
+              <Button variant="text">Registry</Button>
+              <Button variant="text">Gift cards</Button>
+              <Button variant="text">Sell</Button>
             </Stack>
           </Toolbar>
         </AppBar>
