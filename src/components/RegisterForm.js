@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {TextField, Typography} from '@mui/material';
+import { TextField, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
@@ -20,22 +20,22 @@ function RegisterForm() {
           Sign Up
         </Typography>
         <Typography textAlign="center" variant="subtitle1" gutterBottom>
-          It's free and only takes a minute
+          It&apos;s free and only takes a minute
         </Typography>
         <div>
           <TextField
-              First
-              Name
-              label="First Name"
+            First
+            Name
+            label="First Name"
           />
         </div>
         <div>
-        <TextField
+          <TextField
             Last
             Name
             label="Last Name"
-        />
-    </div>
+          />
+        </div>
         <div>
           <TextField
             Email
@@ -44,8 +44,8 @@ function RegisterForm() {
         </div>
         <div>
           <TextField
-              Password
-              label="Password"
+            Password
+            label="Password"
           />
         </div>
         <div>
@@ -60,7 +60,9 @@ function RegisterForm() {
         </Link>
         <div className="login">
           <Typography textAlign="center" variant="subtitle1" gutterBottom>
-            Already have an Account? <Link to="/login" className="link">Login here  </Link>
+            Already have an Account?
+            {' '}
+            <Link to="/login" className="link">Login here  </Link>
           </Typography>
         </div>
       </Box>
