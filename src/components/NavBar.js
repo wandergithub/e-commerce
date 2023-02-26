@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
-import createNotification from "./shared/Notifications";
+import createNotification from './shared/Notifications';
 
 const NavBar = () => {
   if (useMediaQuery('(min-width:650px)')) {
@@ -15,19 +15,45 @@ const NavBar = () => {
         <AppBar position="static">
           <Toolbar variant="dense">
             <Stack spacing={2} direction="row">
-              <Button variant="text">
+              <Button
+                variant="outlined"
+                onClick={createNotification('info')}
+                disabled
+              >
                 <MenuIcon />
                 All
               </Button>
-              <Button variant="text">Today&apos;s Deals</Button>
-              <Button variant="text">
+              <Button
+                variant="outlined"
+                onClick={createNotification('info')}
+                disabled
+              >
+                Today&apos;s Deals
+              </Button>
+              <Button variant="outlined">
                 <Link to="customer_service/" className="link">
                   Customer Service
                 </Link>
               </Button>
-              <Button variant="text">Registry</Button>
-              <Button variant="outlined" onClick={createNotification('info')} disabled>Gift cards</Button>
-              <Button variant="outlined" onClick={createNotification('info')} disabled>Sell</Button>
+              <Button variant="outlined">
+                <Link to="Register" className="link">
+                  Registry
+                </Link>
+              </Button>
+              <Button
+                variant="outlined"
+                onClick={createNotification('info')}
+                disabled
+              >
+                Gift cards
+              </Button>
+              <Button
+                variant="outlined"
+                onClick={createNotification('info')}
+                disabled
+              >
+                Sell
+              </Button>
             </Stack>
           </Toolbar>
         </AppBar>
