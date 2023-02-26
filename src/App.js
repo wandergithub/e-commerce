@@ -10,6 +10,9 @@ import CustomerService from './components/CustomerService';
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import Profile from './components/Profile';
+import {
+  NotificationContainer,
+} from 'react-notifications';
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="e-commerce/" element={<Home />} />
+        <NotificationContainer />
         <Route path="/items" element={<Items />} />
         <Route path="/customer_service" element={<CustomerService />} />
         <Route path="/register" element={<RegisterForm />} />
