@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
+import createNotification from "./shared/Notifications";
 
 const NavBar = () => {
   if (useMediaQuery('(min-width:650px)')) {
@@ -25,8 +26,8 @@ const NavBar = () => {
                 </Link>
               </Button>
               <Button variant="text">Registry</Button>
-              <Button variant="text">Gift cards</Button>
-              <Button variant="text">Sell</Button>
+              <Button variant="outlined" onClick={createNotification('info')} disabled>Gift cards</Button>
+              <Button variant="outlined" onClick={createNotification('info')} disabled>Sell</Button>
             </Stack>
           </Toolbar>
         </AppBar>

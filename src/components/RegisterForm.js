@@ -1,12 +1,12 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import { TextField } from '@mui/material';
+import {TextField, Typography} from '@mui/material';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
 function RegisterForm() {
   return (
-    <div className="center">
+    <div className="login">
       <Box
         component="form"
         sx={{
@@ -16,8 +16,27 @@ function RegisterForm() {
         noValidate
         autoComplete="off"
       >
-        <div className="center">Register</div>
-        <div className="center">
+        <Typography textAlign="center" variant="h4" gutterBottom>
+          Sign Up
+        </Typography>
+        <Typography textAlign="center" variant="subtitle1" gutterBottom>
+          It's free and only takes a minute
+        </Typography>
+        <div>
+          <TextField
+              First
+              Name
+              label="First Name"
+          />
+        </div>
+        <div>
+        <TextField
+            Last
+            Name
+            label="Last Name"
+        />
+    </div>
+        <div>
           <TextField
             Email
             label="Email"
@@ -25,24 +44,12 @@ function RegisterForm() {
         </div>
         <div>
           <TextField
-            First
-            Name
-            label="First Name"
-          />
-          <TextField
-            Last
-            Name
-            label="Last Name"
-          />
-        </div>
-        <div className="center">
-          <TextField
             Confirm
             Password
             label="Confirm Password"
           />
         </div>
-        <div className="center">
+        <div>
           <TextField
             Password
             label="Password"
@@ -50,9 +57,8 @@ function RegisterForm() {
         </div>
 
         <Link to="/e-commerce/" className="link">
-          <div className="center"><Button variant="outlined">Register</Button></div>
+          <div className="login"><Button variant="outlined">Register</Button></div>
         </Link>
-
       </Box>
     </div>
   );
