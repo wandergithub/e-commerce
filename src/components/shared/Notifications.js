@@ -17,7 +17,7 @@ const createNotification = (type) => () => {
       break;
     case 'error':
       NotificationManager.error('Error message', 'Click me!', 5000, () => {
-        alert('callback');
+        // alert('callback');  Write your custom alert message
       });
       break;
     default:
