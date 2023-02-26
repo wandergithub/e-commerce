@@ -44,21 +44,25 @@ function RegisterForm() {
         </div>
         <div>
           <TextField
+              Password
+              label="Password"
+          />
+        </div>
+        <div>
+          <TextField
             Confirm
             Password
             label="Confirm Password"
           />
         </div>
-        <div>
-          <TextField
-            Password
-            label="Password"
-          />
-        </div>
-
         <Link to="/e-commerce/" className="link">
           <div className="login"><Button variant="outlined">Register</Button></div>
         </Link>
+        <div className="login">
+          <Typography textAlign="center" variant="subtitle1" gutterBottom>
+            Already have an Account? <Link to="/login" className="link">Login here  </Link>
+          </Typography>
+        </div>
       </Box>
     </div>
   );
