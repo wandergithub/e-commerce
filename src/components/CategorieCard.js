@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom';
 
 const CategorieCard = (props) => {
   const { image, name } = props;
+
+  const handleDelete = () => {
+    
+  };
+
   return (
     <Card>
       <CardMedia
@@ -22,6 +27,9 @@ const CategorieCard = (props) => {
       <CardActions>
         <Button variant="text">
           <Link className="link" to="/items" state={{ filter: name }}> See items</Link>
+        </Button>
+        <Button variant="text" onClick={handleDelete}>
+          delete
         </Button>
       </CardActions>
     </Card>
