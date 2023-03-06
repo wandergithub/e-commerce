@@ -1,9 +1,10 @@
 import axios from 'axios';
 // Actions
-const CATEGORIES_FETCHED = 'my-app/ecommerce/CATEGORIES_FETCHED';
-const PRODUCTS_FETCHED = 'my-app/ecommerce/PRODUCTS_FETCHED';
-const ADDED_TO_CART = 'my-app/ecommerce/ADDED_TO_CART';
-const DELETED_ITEM_CART = 'my-app/ecommerce/DELETED_ITEM_CART';
+const CATEGORIES_FETCHED = 'my-app/ecommerce/categories/index';
+const DELETED_CATEGORIE = 'my-app/ecommerce/categories/delete';
+const PRODUCTS_FETCHED = 'my-app/ecommerce/products/index';
+const ADDED_TO_CART = 'my-app/ecommerce/cart/add';
+const DELETED_ITEM_CART = 'my-app/ecommerce/cart/delete';
 
 // Reducer
 const reducer = (state = { cart: [] }, action = {}) => {
@@ -26,6 +27,8 @@ export const loadCategories = (categories) => ({ type: CATEGORIES_FETCHED, paylo
 export const loadProducts = (products) => ({ type: PRODUCTS_FETCHED, payload: products });
 export const addToCart = (item) => ({ type: ADDED_TO_CART, payload: item });
 export const deleteFromCart = (id) => ({ type: DELETED_ITEM_CART, payload: id });
+// DELETE
+export const removeCategorie = (id) => ({ type: DELETED_CATEGORIE, payload: id });
 
 // Thunks
 export const fetchInitialData = () => async (dispatch) => {
@@ -33,6 +36,13 @@ export const fetchInitialData = () => async (dispatch) => {
   dispatch(loadCategories(categoriesResponse.data));
   const productsResponse = await axios.get('https://api.escuelajs.co/api/v1/products');
   dispatch(loadProducts(productsResponse.data));
+};
+
+export const deleteCategorie = (id) => async (dispatch) => {
+  const response = await axios.delete(`https://api.escuelajs.co/api/v1/categories/${id}`);
+  if (response.data) {
+    dispatch(removeCategorie(id));
+  }
 };
 
 export default reducer;
