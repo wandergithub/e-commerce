@@ -10,7 +10,7 @@ const Home = () => {
     <div className="cards-container">
       {categories !== undefined ? categories.map((categorie) => (
         <div key={uuidv4()} className="card">
-          <CategorieCard name={categorie.name} image={categorie.image} />
+          <CategorieCard name={categorie.name} image={categorie.image} id={categorie.id}/>
         </div>
       )) : false }
     </div>

@@ -1,15 +1,18 @@
 import {
-  Card, CardContent, CardMedia, Typography, CardActions, Button,
-} from '@mui/material';
-import { PropTypes } from 'prop-types';
-import { Link } from 'react-router-dom';
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  CardActions,
+  Button,
+} from "@mui/material";
+import { PropTypes } from "prop-types";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const CategorieCard = (props) => {
-  const { image, name } = props;
-
-  const handleDelete = () => {
-    
-  };
+  const { image, name, id } = props;
+  const dispatch = useDispatch();
 
   return (
     <Card>
@@ -26,9 +29,12 @@ const CategorieCard = (props) => {
       </CardContent>
       <CardActions>
         <Button variant="text">
-          <Link className="link" to="/items" state={{ filter: name }}> See items</Link>
+          <Link className="link" to="/items" state={{ filter: name }}>
+            {" "}
+            See items
+          </Link>
         </Button>
-        <Button variant="text" onClick={handleDelete}>
+        <Button variant="text" onClick={() => dispatch(deleteCategorie(id))}>
           delete
         </Button>
       </CardActions>
@@ -42,8 +48,8 @@ CategorieCard.propTypes = {
 };
 
 CategorieCard.defaultProps = {
-  image: 'No URL',
-  name: 'Unknown name',
+  image: "No URL",
+  name: "Unknown name",
 };
 
 export default CategorieCard;
