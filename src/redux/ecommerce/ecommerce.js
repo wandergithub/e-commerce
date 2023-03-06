@@ -12,36 +12,65 @@ const reducer = (state = { cart: [], categories: [] }, action = {}) => {
     case CATEGORIES_FETCHED:
       return { ...state, categories: action.payload };
     case DELETED_CATEGORIE:
-      return { ...state, categories: [...state.categories.filter((categorie) => categorie.id != action.payload)] }
+      return {
+        ...state,
+        categories: [
+          ...state.categories.filter(
+            (categorie) => categorie.id !== action.payload,
+          ),
+        ],
+      };
     case PRODUCTS_FETCHED:
       return { ...state, products: action.payload };
     case ADDED_TO_CART:
       if (state.cart.includes(action.payload)) return state;
       return { ...state, cart: [...state.cart, action.payload] };
     case DELETED_ITEM_CART:
-      return { ...state, cart: [...state.cart.filter((item) => item.id !== action.payload)] };
-    default: return state;
+      return {
+        ...state,
+        cart: [...state.cart.filter((item) => item.id !== action.payload)],
+      };
+    default:
+      return state;
   }
 };
 
 // Action Creators
-export const loadCategories = (categories) => ({ type: CATEGORIES_FETCHED, payload: categories });
-export const loadProducts = (products) => ({ type: PRODUCTS_FETCHED, payload: products });
+export const loadCategories = (categories) => ({
+  type: CATEGORIES_FETCHED,
+  payload: categories,
+});
+export const loadProducts = (products) => ({
+  type: PRODUCTS_FETCHED,
+  payload: products,
+});
 export const addToCart = (item) => ({ type: ADDED_TO_CART, payload: item });
-export const deleteFromCart = (id) => ({ type: DELETED_ITEM_CART, payload: id });
+export const deleteFromCart = (id) => ({
+  type: DELETED_ITEM_CART,
+  payload: id,
+});
 // DELETE
-export const removeCategorie = (id) => ({ type: DELETED_CATEGORIE, payload: id });
+export const removeCategorie = (id) => ({
+  type: DELETED_CATEGORIE,
+  payload: id,
+});
 
 // Thunks
 export const fetchInitialData = () => async (dispatch) => {
-  const categoriesResponse = await axios.get('https://api.escuelajs.co/api/v1/categories');
+  const categoriesResponse = await axios.get(
+    'https://api.escuelajs.co/api/v1/categories',
+  );
   dispatch(loadCategories(categoriesResponse.data));
-  const productsResponse = await axios.get('https://api.escuelajs.co/api/v1/products');
+  const productsResponse = await axios.get(
+    'https://api.escuelajs.co/api/v1/products',
+  );
   dispatch(loadProducts(productsResponse.data));
 };
 
 export const deleteCategorie = (id) => async (dispatch) => {
-  const response = await axios.delete(`https://api.escuelajs.co/api/v1/categories/${id}`);
+  const response = await axios.delete(
+    `https://api.escuelajs.co/api/v1/categories/${id}`,
+  );
   if (response.data) {
     dispatch(removeCategorie(id));
   }

@@ -5,10 +5,11 @@ import {
   Typography,
   CardActions,
   Button,
-} from "@mui/material";
-import { PropTypes } from "prop-types";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+} from '@mui/material';
+import { PropTypes } from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { deleteCategorie } from '../redux/ecommerce/ecommerce';
 
 const CategorieCard = (props) => {
   const { image, name, id } = props;
@@ -30,7 +31,7 @@ const CategorieCard = (props) => {
       <CardActions>
         <Button variant="text">
           <Link className="link" to="/items" state={{ filter: name }}>
-            {" "}
+            {' '}
             See items
           </Link>
         </Button>
@@ -48,8 +49,8 @@ CategorieCard.propTypes = {
 };
 
 CategorieCard.defaultProps = {
-  image: "No URL",
-  name: "Unknown name",
+  image: 'No URL',
+  name: 'Unknown name',
 };
 
 export default CategorieCard;
