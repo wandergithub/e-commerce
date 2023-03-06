@@ -7,10 +7,12 @@ const ADDED_TO_CART = 'my-app/ecommerce/cart/add';
 const DELETED_ITEM_CART = 'my-app/ecommerce/cart/delete';
 
 // Reducer
-const reducer = (state = { cart: [] }, action = {}) => {
+const reducer = (state = { cart: [], categories: [] }, action = {}) => {
   switch (action.type) {
     case CATEGORIES_FETCHED:
       return { ...state, categories: action.payload };
+    case DELETED_CATEGORIE:
+      return { ...state, categories: [...state.categories.filter((categorie) => categorie.id != action.payload)] }
     case PRODUCTS_FETCHED:
       return { ...state, products: action.payload };
     case ADDED_TO_CART:
