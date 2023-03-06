@@ -46,11 +46,13 @@ const CategorieCard = (props) => {
 CategorieCard.propTypes = {
   image: PropTypes.string,
   name: PropTypes.string,
+  id: PropTypes.number,
 };
 
 CategorieCard.defaultProps = {
   image: 'No URL',
   name: 'Unknown name',
+  id: Math.random(),
 };
 
 export default CategorieCard;
