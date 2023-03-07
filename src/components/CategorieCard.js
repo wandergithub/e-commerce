@@ -29,13 +29,13 @@ const CategorieCard = (props) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="text">
+        <Button variant="outlined">
           <Link className="link" to="/items" state={{ filter: name }}>
             {' '}
             See items
           </Link>
         </Button>
-        <Button variant="text" onClick={() => dispatch(deleteCategorie(id))}>
+        <Button variant="outlined" color="error" onClick={() => dispatch(deleteCategorie(id))}>
           delete
         </Button>
       </CardActions>
