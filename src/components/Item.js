@@ -34,14 +34,15 @@ const Item = (props) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="text">Item Details</Button>
+        {/* <Button variant="contained">Item Details</Button> */}
         <Button
-          variant="text"
+          variant="outlined"
           color="secondary"
           onClick={() => dispatch(addToCart(props))}
         >
           Add to cart
         </Button>
+        <Button variant="outlined" color="error">Delete</Button>
       </CardActions>
     </Card>
   );
