@@ -5,16 +5,14 @@ import {
   Typography,
   CardActions,
   Button,
-} from '@mui/material';
-import { PropTypes } from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../redux/ecommerce/ecommerce';
+} from "@mui/material";
+import { PropTypes } from "prop-types";
+import { useDispatch } from "react-redux";
+import { addToCart, deleteItem } from "../redux/ecommerce/ecommerce";
 
 const Item = (props) => {
   const dispatch = useDispatch();
-  const {
-    title, price, images, id,
-  } = props;
+  const { title, price, images, id } = props;
 
   return (
     <Card variant="outlined" key={id}>
@@ -42,7 +40,9 @@ const Item = (props) => {
         >
           Add to cart
         </Button>
-        <Button variant="outlined" color="error">Delete</Button>
+        <Button variant="outlined" color="error" onClick={() => dispatch(deleteItem(id))}>
+          Delete
+        </Button>
       </CardActions>
     </Card>
   );
@@ -57,7 +57,7 @@ Item.propTypes = {
 
 Item.defaultProps = {
   id: 0,
-  title: 'Unknown title',
+  title: "Unknown title",
   price: Math.random(),
   images: [],
 };
