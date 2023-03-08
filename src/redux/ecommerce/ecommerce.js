@@ -76,4 +76,11 @@ export const deleteCategorie = (id) => async (dispatch) => {
   }
 };
 
+export const deleteItem = (id) => async (dispatch) => {
+  const response = await axios.delete(`https://api.escuelajs.co/api/v1/products/${id}`);
+  if(response.data) {
+    dispatch(removeItem(id));
+  }
+};
+
 export default reducer;
