@@ -9,19 +9,24 @@ import {
 } from '@mui/material';
 import '../style/home.css';
 import '../style/items.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createProduct, createCategorie } from '../redux/ecommerce/ecommerce';
 
 const Sell = () => {
-  const categories = useSelector((state) => state.categories);
-
-  const [categorieId, setCategorieId] = useState(categories[0].id);
+  const [categorieId, setCategorieId] = useState(1);
   const [name, setname] = useState('default categorie');
-  const [img, setimg] = useState('https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?cs=srgb&dl=pexels-eprism-studio-335257.jpg&fm=jpg');
+  const [img, setimg] = useState(
+    'https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?cs=srgb&dl=pexels-eprism-studio-335257.jpg&fm=jpg',
+  );
   const [title, settitle] = useState('default product');
   const [price, setprice] = useState('21');
   const [description, setdescription] = useState('default description');
-  const [pimg, setpimg] = useState('https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?cs=srgb&dl=pexels-eprism-studio-335257.jpg&fm=jpg');
+  const [pimg, setpimg] = useState(
+    'https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?cs=srgb&dl=pexels-eprism-studio-335257.jpg&fm=jpg',
+  );
+
+  const categories = useSelector((state) => state.categories);
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     // Handle textfield or selcet
@@ -59,9 +64,9 @@ const Sell = () => {
 
   const handleSubmit = (event) => {
     if (event.target.id === 'submit-p') {
-      createProduct(title, price, description, pimg, categorieId);
+      dispatch(createProduct(title, price, description, pimg, categorieId));
     } else {
-      createCategorie(name, img);
+      dispatch(createCategorie(name, img));
     }
   };
   return (
