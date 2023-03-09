@@ -132,7 +132,19 @@ export const deleteItem = (id) => async (dispatch) => {
 };
 
 export const createProduct = (title, price, description, img, categorieId) => async (dispatch) => {
+  const data = {
+    title,
+    price,
+    description,
+    categorieId,
+    images: [img],
+  };
 
+  const response = axios.post('https://api.escuelajs.co/api/v1/products/', data);
+
+  if (response.status === 201) {
+    dispatch(addProduct(response.data));
+  }
 };
 
 export const createCategorie = (name, image) => async (dispatch) => {
