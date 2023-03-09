@@ -13,6 +13,7 @@ import CustomerService from './components/CustomerService';
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import Profile from './components/Profile';
+import Sell from './components/Sell';
 
 function App() {
   const dispatch = useDispatch();
