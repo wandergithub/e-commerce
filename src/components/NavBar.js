@@ -48,7 +48,7 @@ const NavBar = () => {
                 Gift cards
               </Button>
               <Button variant="outlined">
-                <Link to="Sell" className="link">
+                <Link to="sell" className="link">
                   Sell
                 </Link>
               </Button>
