@@ -103,7 +103,7 @@ const Sell = () => {
           onChange={handleChange}
         />
         <FormControl fullWidth>
-          <InputLabel id="product-categorieid">Categorie id:</InputLabel>
+          <InputLabel id="product-categorieid">Categorie</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -111,9 +111,11 @@ const Sell = () => {
             label="Categorie Id"
             onChange={handleChange}
           >
-            <MenuItem value={12}>12</MenuItem>
-            <MenuItem value={1}>1</MenuItem>
-            <MenuItem value={2}>2</MenuItem>
+            {categories.map((categorie) => (
+              <MenuItem key={categorie.id} value={categorie.id}>
+                {categorie.name}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
 
