@@ -3,22 +3,22 @@
 */
 /* To improve:
   Concistency of naming:
-  Unconcistency on some(Components, Actions constants using nouns-verb and verb-nouns, 
+  Unconcistency on some(Components, Actions constants using nouns-verb and verb-nouns,
                         and avoid Item/product situation )
 */
-import axios from "axios";
+import axios from 'axios';
 // Actions
-const CATEGORIES_FETCHED = "my-app/ecommerce/categories/index";
-const DELETED_CATEGORIE = "my-app/ecommerce/categories/delete";
-const PRODUCTS_FETCHED = "my-app/ecommerce/products/index";
-const PRODUCT_DELETED = "my-app/ecommerce/products/delete";
-const ADDED_TO_CART = "my-app/ecommerce/cart/add";
-const DELETED_ITEM_CART = "my-app/ecommerce/cart/delete";
+const CATEGORIES_FETCHED = 'my-app/ecommerce/categories/index';
+const DELETED_CATEGORIE = 'my-app/ecommerce/categories/delete';
+const PRODUCTS_FETCHED = 'my-app/ecommerce/products/index';
+const PRODUCT_DELETED = 'my-app/ecommerce/products/delete';
+const ADDED_TO_CART = 'my-app/ecommerce/cart/add';
+const DELETED_ITEM_CART = 'my-app/ecommerce/cart/delete';
 
 // Reducer
 const reducer = (
   state = { cart: [], categories: [], products: [] },
-  action = {}
+  action = {},
 ) => {
   switch (action.type) {
     case CATEGORIES_FETCHED:
@@ -28,7 +28,7 @@ const reducer = (
         ...state,
         categories: [
           ...state.categories.filter(
-            (categorie) => categorie.id !== action.payload
+            (categorie) => categorie.id !== action.payload,
           ),
         ],
       };
@@ -82,18 +82,18 @@ export const removeItem = (id) => ({
 // Thunks
 export const fetchInitialData = () => async (dispatch) => {
   const categoriesResponse = await axios.get(
-    "https://api.escuelajs.co/api/v1/categories"
+    'https://api.escuelajs.co/api/v1/categories',
   );
   dispatch(loadCategories(categoriesResponse.data));
   const productsResponse = await axios.get(
-    "https://api.escuelajs.co/api/v1/products"
+    'https://api.escuelajs.co/api/v1/products',
   );
   dispatch(loadProducts(productsResponse.data));
 };
 
 export const deleteCategorie = (id) => async (dispatch) => {
   const response = await axios.delete(
-    `https://api.escuelajs.co/api/v1/categories/${id}`
+    `https://api.escuelajs.co/api/v1/categories/${id}`,
   );
   if (response.data) {
     dispatch(removeCategorie(id));
@@ -102,7 +102,7 @@ export const deleteCategorie = (id) => async (dispatch) => {
 
 export const deleteItem = (id) => async (dispatch) => {
   const response = await axios.delete(
-    `https://api.escuelajs.co/api/v1/products/${id}`
+    `https://api.escuelajs.co/api/v1/products/${id}`,
   );
   if (response.data) {
     dispatch(removeItem(id));

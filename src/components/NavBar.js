@@ -47,12 +47,10 @@ const NavBar = () => {
               >
                 Gift cards
               </Button>
-              <Button
-                variant="outlined"
-                onClick={createNotification('info')}
-                disabled
-              >
-                Sell
+              <Button variant="outlined">
+                <Link to="Sell" className="link">
+                  Sell
+                </Link>
               </Button>
             </Stack>
           </Toolbar>
