@@ -19,7 +19,7 @@ const Sell = () => {
     'https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?cs=srgb&dl=pexels-eprism-studio-335257.jpg&fm=jpg',
   );
   const [title, settitle] = useState('default product');
-  const [price, setprice] = useState('21');
+  const [price, setprice] = useState(21);
   const [description, setdescription] = useState('default description');
   const [pimg, setpimg] = useState(
     'https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?cs=srgb&dl=pexels-eprism-studio-335257.jpg&fm=jpg',
@@ -44,7 +44,7 @@ const Sell = () => {
           break;
 
         case 'product-price':
-          setprice(event.target.value);
+          setprice(Number(event.target.value));
           break;
 
         case 'product-description':

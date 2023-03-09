@@ -131,18 +131,18 @@ export const deleteItem = (id) => async (dispatch) => {
   }
 };
 
-export const createProduct = (title, price, description, img, categorieId) => async (dispatch) => {
+export const createProduct = (title, price, description, img, categoryId) => async (dispatch) => {
   const data = {
     title,
     price,
     description,
-    categorieId,
+    categoryId,
     images: [img],
   };
 
-  const response = axios.post('https://api.escuelajs.co/api/v1/products/', data);
+  const response = await axios.post('https://api.escuelajs.co/api/v1/products/', data);
 
-  if (response.status === 201) {
+  if (response) {
     dispatch(addProduct(response.data));
   }
 };
@@ -156,7 +156,7 @@ export const createCategorie = (name, image) => async (dispatch) => {
     'https://api.escuelajs.co/api/v1/categories/',
     data,
   );
-  if (response.status === 201) {
+  if (response) {
     dispatch(addCategorie(response.data));
   }
 };
