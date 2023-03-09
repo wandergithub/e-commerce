@@ -90,6 +90,10 @@ export const addCategorie = (categorie) => ({
   payload: categorie,
 });
 
+export const addProduct = (product) => ({
+  type: CREATED_PRODUCT,
+  payload: product,
+});
 
 // Thunks
 export const fetchInitialData = () => async (dispatch) => {
