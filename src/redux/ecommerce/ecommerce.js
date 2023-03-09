@@ -84,6 +84,12 @@ export const removeItem = (id) => ({
   type: PRODUCT_DELETED,
   payload: id,
 });
+// CREATE
+export const addCategorie = (categorie) => ({
+  type: CREATED_CATEGORIE,
+  payload: categorie,
+});
+
 
 // Thunks
 export const fetchInitialData = () => async (dispatch) => {
