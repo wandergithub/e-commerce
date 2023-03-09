@@ -10,6 +10,7 @@ import {
 import '../style/home.css';
 import '../style/items.css';
 import { useSelector } from 'react-redux';
+import { createProduct, createCategorie } from '../redux/ecommerce/ecommerce';
 
 const Sell = () => {
   const [categorieId, setCategorieId] = useState('');
@@ -56,6 +57,13 @@ const Sell = () => {
     }
   };
 
+  const handleSubmit = (event) => {
+    if (event.target.id === 'submit-p') {
+      createProduct(title, price, description, pimg, categorieId);
+    } else {
+      createCategorie(name, img);
+    }
+  };
   return (
     <div className="cards-container outside">
       <h2>Create Categorie</h2>
@@ -72,7 +80,12 @@ const Sell = () => {
           variant="standard"
           onChange={handleChange}
         />
-        <Button variant="contained" color="success">
+        <Button
+          id="submit-c"
+          variant="contained"
+          color="success"
+          onClick={handleSubmit}
+        >
           Create
         </Button>
       </form>
@@ -119,7 +132,12 @@ const Sell = () => {
           </Select>
         </FormControl>
 
-        <Button variant="contained" color="success">
+        <Button
+          id="submit-p"
+          variant="contained"
+          color="success"
+          onClick={handleSubmit}
+        >
           Create
         </Button>
       </form>

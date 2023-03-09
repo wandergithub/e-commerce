@@ -109,4 +109,11 @@ export const deleteItem = (id) => async (dispatch) => {
   }
 };
 
+export const createProduct = (title, price, description, img, categorieId) => async (dispatch) => {
+
+};
+export const createCategorie = (name, img) => async (dispatch) => {
+
+};
+
 export default reducer;
