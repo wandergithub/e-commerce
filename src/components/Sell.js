@@ -13,15 +13,15 @@ import { useSelector } from 'react-redux';
 import { createProduct, createCategorie } from '../redux/ecommerce/ecommerce';
 
 const Sell = () => {
-  const [categorieId, setCategorieId] = useState('');
-  const [name, setname] = useState('');
-  const [img, setimg] = useState('');
-  const [title, settitle] = useState('');
-  const [price, setprice] = useState('');
-  const [description, setdescription] = useState('');
-  const [pimg, setpimg] = useState('');
-
   const categories = useSelector((state) => state.categories);
+
+  const [categorieId, setCategorieId] = useState(categories[0].id);
+  const [name, setname] = useState('default categorie');
+  const [img, setimg] = useState('https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?cs=srgb&dl=pexels-eprism-studio-335257.jpg&fm=jpg');
+  const [title, settitle] = useState('default product');
+  const [price, setprice] = useState('21');
+  const [description, setdescription] = useState('default description');
+  const [pimg, setpimg] = useState('https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?cs=srgb&dl=pexels-eprism-studio-335257.jpg&fm=jpg');
 
   const handleChange = (event) => {
     // Handle textfield or selcet
