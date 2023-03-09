@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import '../style/home.css';
 import '../style/items.css';
+import { useSelector } from 'react-redux';
 
 const Sell = () => {
   const [categorieId, setCategorieId] = useState('');
@@ -18,6 +19,8 @@ const Sell = () => {
   const [price, setprice] = useState('');
   const [description, setdescription] = useState('');
   const [pimg, setpimg] = useState('');
+
+  const categories = useSelector((state) => state.categories);
 
   const handleChange = (event) => {
     // Handle textfield or selcet

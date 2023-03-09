@@ -49,7 +49,7 @@ const NavBar = () => {
               </Button>
               <Button variant="outlined">
                 <Link to="sell" className="link">
-                  Sell
+                  Create new
                 </Link>
               </Button>
             </Stack>
