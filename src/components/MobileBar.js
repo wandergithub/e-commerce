@@ -1,5 +1,6 @@
 import { IconButton, InputBase, Paper } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { PropTypes } from 'prop-types';
 import HamburguerMenu from './HamburguerMenu';
 import Cart from './Cart';
 
@@ -29,13 +30,12 @@ const MobileBar = (props) => {
   );
 };
 
-
 MobileBar.propTypes = {
-  cart: PropTypes.instanceOf(Array),
+  items: PropTypes.instanceOf(Array),
 };
 
 MobileBar.defaultProps = {
-  cart: [],
+  items: [],
 };
 
 export default MobileBar;

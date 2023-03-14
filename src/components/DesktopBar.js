@@ -13,7 +13,7 @@ import 'react-notifications/lib/notifications.css';
 import createNotification from './shared/Notifications';
 
 const DesktopBar = (props) => {
-  const { cart } = props;
+  const { items } = props;
 
   return (
     <div className="option-bar">
@@ -73,8 +73,8 @@ const DesktopBar = (props) => {
         </Link>
       </div>
       <div className="cart">
-        <Badge badgeContent={cart.length} color="primary">
-          <Cart items={cart} />
+        <Badge badgeContent={items.length} color="primary">
+          <Cart items={items} />
         </Badge>
       </div>
     </div>
@@ -82,10 +82,10 @@ const DesktopBar = (props) => {
 };
 
 DesktopBar.propTypes = {
-  cart: PropTypes.instanceOf(Array),
+  items: PropTypes.instanceOf(Array),
 };
 
 DesktopBar.defaultProps = {
-  cart: [],
+  items: [],
 };
 export default DesktopBar;
