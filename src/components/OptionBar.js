@@ -5,13 +5,13 @@ import DesktopBar from './DesktopBar';
 import MobileBar from './MobileBar';
 
 const OptionBar = () => {
-  const cart = useSelector((state) => state.cart);
+  const items = useSelector((state) => state.cart);
 
   if (useMediaQuery('(min-width:650px)')) {
-    return <DesktopBar cart={cart} />;
+    return <DesktopBar items={items} />;
   }
 
-  return <MobileBar />;
+  return <MobileBar items={items} />;
 };
 
 export default OptionBar;
