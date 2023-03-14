@@ -1,6 +1,6 @@
 import { IconButton, InputBase, Paper } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import MenuIcon from '@mui/icons-material/Menu';
+import HamburguerMenu from './HamburguerMenu';
 
 const MobileBar = () => (
   <div className="search-bar">
@@ -11,7 +11,7 @@ const MobileBar = () => (
       aria-label="menu"
       sx={{ mr: 2 }}
     >
-      <MenuIcon />
+      <HamburguerMenu />
     </IconButton>
     <Paper>
       <InputBase
