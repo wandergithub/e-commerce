@@ -30,4 +30,12 @@ const MobileBar = (props) => {
 };
 
 
+MobileBar.propTypes = {
+  cart: PropTypes.instanceOf(Array),
+};
+
+MobileBar.defaultProps = {
+  cart: [],
+};
+
 export default MobileBar;
