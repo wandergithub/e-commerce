@@ -1,21 +1,13 @@
-/* Important:
-  Product and Item are interchangable names but both refer to the final selling object.
-*/
-/* To improve:
-  Concistency of naming:
-  Unconcistency on some(Components, Actions constants using nouns-verb and verb-nouns,
-                        and avoid Item/product situation )
-*/
 import axios from 'axios';
 // Actions
-const CATEGORIES_FETCHED = 'my-app/ecommerce/categories/index';
-const DELETED_CATEGORIE = 'my-app/ecommerce/categories/delete';
-const CREATED_CATEGORIE = 'my-app/ecommerce/categories/create';
-const PRODUCTS_FETCHED = 'my-app/ecommerce/products/index';
-const PRODUCT_DELETED = 'my-app/ecommerce/products/delete';
-const CREATED_PRODUCT = 'my-app/ecommerce/product/create';
-const ADDED_TO_CART = 'my-app/ecommerce/cart/add';
-const DELETED_ITEM_CART = 'my-app/ecommerce/cart/delete';
+const CATEGORIES_FETCHED = 'my-app/ecommerce/categorie/index';
+const CATEGORY_DELETED = 'my-app/ecommerce/categorie/delete';
+const CATEGORY_CREATED = 'my-app/ecommerce/categorie/create';
+const PRODUCTS_FETCHED = 'my-app/ecommerce/product/index';
+const PRODUCT_DELETED = 'my-app/ecommerce/product/delete';
+const PRODUCT_CREATED = 'my-app/ecommerce/product/create';
+const CART_ADDED_ITEM = 'my-app/ecommerce/cart/add';
+const CART_DELETED_ITEM = 'my-app/ecommerce/cart/delete';
 
 // Reducer
 const reducer = (
@@ -25,7 +17,7 @@ const reducer = (
   switch (action.type) {
     case CATEGORIES_FETCHED:
       return { ...state, categories: action.payload };
-    case DELETED_CATEGORIE:
+    case CATEGORY_DELETED:
       return {
         ...state,
         categories: [
@@ -34,12 +26,12 @@ const reducer = (
           ),
         ],
       };
-    case CREATED_CATEGORIE:
+    case CATEGORY_CREATED:
       return {
         ...state,
         categories: [...state.categories, action.payload],
       };
-    case CREATED_PRODUCT:
+    case PRODUCT_CREATED:
       return {
         ...state,
         products: [...state.products, action.payload],
@@ -53,10 +45,10 @@ const reducer = (
       };
     case PRODUCTS_FETCHED:
       return { ...state, products: action.payload };
-    case ADDED_TO_CART:
+    case CART_ADDED_ITEM:
       if (state.cart.includes(action.payload)) return state;
       return { ...state, cart: [...state.cart, action.payload] };
-    case DELETED_ITEM_CART:
+    case CART_DELETED_ITEM:
       return {
         ...state,
         cart: [...state.cart.filter((item) => item.id !== action.payload)],
@@ -75,14 +67,14 @@ export const loadProducts = (products) => ({
   type: PRODUCTS_FETCHED,
   payload: products,
 });
-export const addToCart = (item) => ({ type: ADDED_TO_CART, payload: item });
+export const addToCart = (item) => ({ type: CART_ADDED_ITEM, payload: item });
 export const deleteFromCart = (id) => ({
-  type: DELETED_ITEM_CART,
+  type: CART_DELETED_ITEM,
   payload: id,
 });
 // DELETE
 export const removeCategorie = (id) => ({
-  type: DELETED_CATEGORIE,
+  type: CATEGORY_DELETED,
   payload: id,
 });
 
@@ -92,12 +84,12 @@ export const removeItem = (id) => ({
 });
 // CREATE
 export const addCategorie = (categorie) => ({
-  type: CREATED_CATEGORIE,
+  type: CATEGORY_CREATED,
   payload: categorie,
 });
 
 export const addProduct = (product) => ({
-  type: CREATED_PRODUCT,
+  type: PRODUCT_CREATED,
   payload: product,
 });
 
